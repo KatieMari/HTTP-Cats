@@ -1,0 +1,11 @@
+{
+    "codes": [200, 404, 500, 403, 418],
+    "descriptions": {
+      "200": "OK - Success!",
+      "404": "Not Found - The server can't find the requested resource.",
+      "500": "Internal Server Error - The server encountered an unexpected condition.",
+      "403": "Forbidden - You don't have permission to access this resource.",
+      "418": "I'm a teapot - The server refuses to brew coffee."
+    }
+  }
+  
