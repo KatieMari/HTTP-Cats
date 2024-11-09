@@ -11,16 +11,16 @@ const catImage = document.getElementById("cat-image");
 const catDescription = document.getElementById("cat-description");
 const refreshButton = document.getElementById("refresh-btn");
 
-// Function to show a random cat
-function showRandomCat() {
-  const randomCode = statusCodes[Math.floor(Math.random() * statusCodes.length)];
-  catImage.src = `${apiUrl}${randomCode}`;
-  catImage.alt = `HTTP Status ${randomCode}`;
-  catDescription.textContent = `Status ${randomCode}`;
+// Generate a random cat image
+function generateCatImage() {
+  const randomStatus = statusCodes[Math.floor(Math.random() * statusCodes.length)];
+  catImage.src = `${apiUrl}${randomStatus}`;
+  catImage.alt = `HTTP Status ${randomStatus}`;
+  catDescription.textContent = `Status ${randomStatus}`;
 }
 
 // Refresh button listener
-refreshButton.addEventListener("click", showRandomCat);
+refreshButton.addEventListener("click", generateCatImage);
 
 // Initial load
-showRandomCat();
+generateCatImage();
