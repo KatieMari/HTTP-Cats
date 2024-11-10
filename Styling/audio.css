@@ -1,47 +1,41 @@
+/* General Styling for the Music Div */
 .music {
   margin-bottom: 50px;
 }
 
+/* Styling for the Volume Text */
 #volume-text {
   color: #a453a6;
-  /* Your desired color */
   font-size: 20px;
-  /* Optional */
 }
 
+/* Styling for the Volume Control Slider */
 #volume-control {
   width: 200px;
   margin: 10px 0;
-  -webkit-appearance: none; /* For Webkit browsers */
-  appearance: none;         /* Standard for all browsers */
 }
 
+/* Sliders Styling */
+input[type="range"] {
+  appearance: none;
+  width: 120px;
+  height: 10px;
+  background: #a453a6;
+  border-radius: 5px;
+}
 
-#volume-control::-webkit-slider-thumb {
-  background-color: #A453A6;
-  /* Thumb color */
-  border: none;
-  /* No border */
-  width: 20px;
-  /* Width of the thumb */
-  height: 20px;
-  /* Height of the thumb */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  /* Circular thumb */
+  background: white;
   cursor: pointer;
-  /* Cursor on hover */
-  transition: background-color 0.3s ease;
-  /* Smooth transition on hover */
 }
 
-/* Hover effect on the thumb for WebKit-based browsers */
-#volume-control::-webkit-slider-thumb:hover {
-  background-color: #A64182;
-  /* Slightly darker color on hover */
-}
-
+/* Styling for the Mute Button */
 #mute-button {
-  background-color: #A453A6;
+  background-color: #d98fcc;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -50,6 +44,7 @@
   font-family: 'Autour One', sans-serif;
 }
 
+/* Hover Effect for the Mute Button */
 #mute-button:hover {
   background-color: #A64182;
 }
