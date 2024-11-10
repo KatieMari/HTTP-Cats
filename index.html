@@ -5,26 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cute HTTP Cat Visualizer</title>
+
+    <!-- Link to Styling -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link to Java Script -->
     <script src="script.js" defer></script>
 </head>
 
 <body>
+    <!-- Header Section for the Page Title -->
     <header>
         <h1>=ᗢ= Random HTTP Status Cat =ᗢ=</h1>
     </header>
 
+    <!-- Main Content of the Page -->
     <main class="container">
+
+        <!-- Section that Contains the Cat Image and its Description -->
         <section id="cat-display">
             <div id="cat-container">
+                <!-- Image Element for Displaying the Random HTTP Cat Image -->
                 <img id="cat-image" src="" alt="HTTP Cat">
+                <!-- Shows the Description of the HTTP Status Associated with the Cat-->
                 <p id="cat-description">Loading...</p>
             </div>
         </section>
 
-        <button id="refresh-btn">♡︎ Show Another Cat ♡︎</button>
+        <!-- Button to Generate a New Random Cat Image and Description -->
+        <button id="refresh-button">♡︎ Show Another Cat ♡︎</button>
     </main>
 
+    <img class="animated-cat" src="Assets/Animated Cat.png" />
+
+    <!-- Footer Section for Link to API Website -->
     <footer>
         <p>Powered by <a href="https://http.cat/" target="_blank">HTTP Cat API</a></p>
     </footer>
