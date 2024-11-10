@@ -14,8 +14,8 @@ body {
   background-color: #ffe4e1;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
   /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 /* Body Layout Settings */
@@ -26,7 +26,6 @@ body {
   align-items: center;
   padding: 0;
   padding-top: 100px;
-  /* Creates space for the fixed header */
 }
 
 /* Container for the Main Content */
@@ -37,7 +36,5 @@ body {
   justify-content: flex-start;
   flex: 1;
   width: 90%;
-  /* Add responsive width */
   max-width: 1200px;
-  /* Center content on larger screens */
 }

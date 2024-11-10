@@ -87,9 +87,9 @@
     }
 }
 
+/* Styles for the Animated Cat Element */
 .animated-cat {
     margin-bottom: 40px;
-    /* Reduced space below the animated cat */
     width: 200px;
     height: 200px;
     animation-duration: 2s;
@@ -97,22 +97,27 @@
     animation-iteration-count: infinite;
 }
 
+/* Animation Class for Bouncing Effect */
 .bounce-100 {
     animation-name: bounce-100;
 }
 
+/* Animation Class for Slide Effect */
 .slide-200 {
     animation-name: slide-200;
 }
 
+/* Animation Class for Shake Effect */
 .shake-300 {
     animation-name: shake-300;
 }
 
+/* Animation Class for Spin Effect */
 .spin-400 {
     animation-name: spin-400;
 }
 
+/* Animation Class for Rotating Effect */
 .rotate-500 {
     animation-name: rotate-500;
 }

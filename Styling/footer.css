@@ -5,13 +5,13 @@ footer {
     color: #800080;
     padding: 10px 0;
     text-align: center;
-  }
-  
-  footer a {
+}
+
+footer a {
     color: #a453a6;
     text-decoration: none;
-  }
-  
-  footer a:hover {
+}
+
+footer a:hover {
     text-decoration: underline;
-  }
+}
