@@ -1,0 +1,118 @@
+/* Animation Keyframes and Classes */
+/* Bouncing for 100s */
+@keyframes bounce-100 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Sliding for 200s */
+@keyframes slide-200 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Shaking for 300s */
+@keyframes shake-300 {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Spinning for 400s */
+@keyframes spin-400 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Rotating for 500s */
+@keyframes rotate-500 {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-20px);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animated-cat {
+    margin-bottom: 40px;
+    /* Reduced space below the animated cat */
+    width: 200px;
+    height: 200px;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.bounce-100 {
+    animation-name: bounce-100;
+}
+
+.slide-200 {
+    animation-name: slide-200;
+}
+
+.shake-300 {
+    animation-name: shake-300;
+}
+
+.spin-400 {
+    animation-name: spin-400;
+}
+
+.rotate-500 {
+    animation-name: rotate-500;
+}

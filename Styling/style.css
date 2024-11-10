@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Autour+One&display=swap');
+
+/* Resets Margin and Padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sets Font and Background for the Page */
+html,
+body {
+  font-family: 'Autour One', sans-serif;
+  background-color: #ffe4e1;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+}
+
+/* Body Layout Settings */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  padding-top: 100px;
+  /* Creates space for the fixed header */
+}
+
+/* Container for the Main Content */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  width: 90%;
+  /* Add responsive width */
+  max-width: 1200px;
+  /* Center content on larger screens */
+}

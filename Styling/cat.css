@@ -1,0 +1,45 @@
+/* Cat Display Settings */
+#cat-display {
+    margin-top: 5px;
+    max-width: 100%;
+    /* Responsive width */
+    height: auto;
+  }
+  
+  /* Cat Container Settings */
+  #cat-container {
+    background-color: #f2cee2;
+    border: 3px solid #d98fcc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* Ensures better spacing */
+    gap: 10px;
+    /* Adds a uniform gap between child elements */
+  }
+  
+  /* Cat Image Settings */
+  #cat-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  
+  
+  /* Cat Description Settings */
+  #cat-description {
+    font-size: 1.1em;
+    /* Slightly smaller */
+    color: #a453a6;
+    text-align: center;
+    padding: 0 10px;
+    /* Add padding for better spacing */
+  }

@@ -7,10 +7,17 @@
     <title>Cute HTTP Cat Visualizer</title>
 
     <!-- Link to Styling -->
-    <link rel="stylesheet" href="style.css">
+    <link href="Styling/style.css" rel="stylesheet">
+    <link href="Styling/animated-img.css" rel="stylesheet">
+    <link href="Styling/audio.css" rel="stylesheet">
+    <link href="Styling/cat.css" rel="stylesheet">
+    <link href="Styling/footer.css" rel="stylesheet">
+    <link href="Styling/header.css" rel="stylesheet">
+    <link href="Styling/refresh-btn.css" rel="stylesheet">
 
     <!-- Link to Java Script -->
-    <script src="script.js" defer></script>
+    <script src="JavaScript/music.js" defer></script>
+    <script src="JavaScript/script.js" defer></script>
 </head>
 
 <body>
@@ -19,7 +26,7 @@
         <h1>=ᗢ= Random HTTP Status Cat =ᗢ=</h1>
     </header>
 
-    <!-- Main Content of the Page -->
+    <!-- Main Content Area -->
     <main class="container">
 
         <!-- Section that Contains the Cat Image and its Description -->
@@ -36,7 +43,23 @@
         <button id="refresh-button">♡︎ Show Another Cat ♡︎</button>
     </main>
 
-    <img class="animated-cat" src="Assets/Animated Cat.png" alt="Animated Cat"/>
+    <!-- Animated Cat Image for Extra Effect -->
+    <img class="animated-cat" src="Assets/Images/Animated Cat.png" alt="Animated Cat" />
+
+    <!-- Music Control Div -->
+    <div class="music">
+        <!-- Audio Element to Play Background Music which Loops on End -->
+        <audio id="background-music" autoplay loop>
+            <source src="Assets/Audio/audio.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Text to Show Volume Control Label -->
+        <span id="volume-text">Volume:</span>
+        <!-- Range Input for Controlling the Volume -->
+        <input type="range" id="volume-control" min="0" max="100">
+        <!-- Button to Mute/Unmute -->
+        <button id="mute-button">Mute</button>
+    </div>
 
     <!-- Footer Section for Link to API Website -->
     <footer>

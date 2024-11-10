@@ -1,0 +1,20 @@
+/* Button Styles */
+#refresh-button {
+    font-family: 'Autour One', sans-serif;
+    margin: 10px;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #a453a6;
+    color: #fff;
+    border: 2px solid #d98fcc;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: transform 0.2s;
+  }
+  
+  #refresh-button:hover {
+    background-color: #a64182;
+    transform: scale(1.05);
+  }
+  

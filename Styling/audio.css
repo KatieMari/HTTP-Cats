@@ -1,0 +1,55 @@
+.music {
+  margin-bottom: 50px;
+}
+
+#volume-text {
+  color: #a453a6;
+  /* Your desired color */
+  font-size: 20px;
+  /* Optional */
+}
+
+#volume-control {
+  width: 200px;
+  margin: 10px 0;
+  -webkit-appearance: none; /* For Webkit browsers */
+  appearance: none;         /* Standard for all browsers */
+}
+
+
+#volume-control::-webkit-slider-thumb {
+  background-color: #A453A6;
+  /* Thumb color */
+  border: none;
+  /* No border */
+  width: 20px;
+  /* Width of the thumb */
+  height: 20px;
+  /* Height of the thumb */
+  border-radius: 50%;
+  /* Circular thumb */
+  cursor: pointer;
+  /* Cursor on hover */
+  transition: background-color 0.3s ease;
+  /* Smooth transition on hover */
+}
+
+/* Hover effect on the thumb for WebKit-based browsers */
+#volume-control::-webkit-slider-thumb:hover {
+  background-color: #A64182;
+  /* Slightly darker color on hover */
+}
+
+#mute-button {
+  background-color: #A453A6;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Autour One', sans-serif;
+}
+
+#mute-button:hover {
+  background-color: #A64182;
+}
