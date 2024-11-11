@@ -61,7 +61,7 @@ function generateCatImage() {
         animationClass = 'bounce';
       } else if (catFactText.includes("meow")|| catFactText.includes("claws")) {
         backgroundColor = "#FAA0A0"; // Pastel Red Background for "meow"
-        animationClass = 'shake';
+        animationClass = 'slide';
       } else if (catFactText.includes("sleep")|| catFactText.includes("domesticated")) {
         backgroundColor = "#C0C0C0"; // Silver background for "sleep"
         animationClass = 'bounce';
@@ -70,7 +70,7 @@ function generateCatImage() {
         animationClass = 'rotate';
       } else if (catFactText.includes("cute")|| catFactText.includes("animal")) {
         backgroundColor = "#C3B1E1"; // Pastel Purple background for "cute"
-        animationClass = 'bounce';
+        animationClass = 'slide';
       } else {
         backgroundColor = "#FFE4E1"; // Default pink background
         animationClass = 'spin';
