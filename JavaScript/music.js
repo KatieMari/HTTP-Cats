@@ -1,13 +1,15 @@
-// Gets Elements by ID from HTML for Background Music, Volume Control, and Mute Button
+// Gets Elements by ID from HTML for Background Music, Volume Control, Mute Button, and Play Button
 const backgroundMusic = document.getElementById('background-music');
 const volumeControl = document.getElementById('volume-control');
-const muteButton = document.getElementById('mute-button');
+const playButton = document.getElementById('play-button');
 
 // Sets Initial Volume and Plays when loaded
 backgroundMusic.volume = 0.5;
 window.addEventListener('load', () => {
-    // PLays Music on Load
+    // Plays Music on Load
     backgroundMusic.play();
+     // Set Play Button Text to 'Pause' since the music plays automatically
+     playButton.innerHTML = 'Pause';
 });
 
 // Updates Volume Based on Slider Value
@@ -16,18 +18,17 @@ volumeControl.addEventListener('input', function () {
     backgroundMusic.volume = this.value / 100;
 });
 
-// Toggle Mute on Button Click
-muteButton.addEventListener('click', function () {
-    if (backgroundMusic.muted) {
-        // Unmute Music
-        backgroundMusic.muted = false;
-        // Change Button Text to 'Mute'
-        muteButton.textContent = 'Mute';
+// Play/Pause Button Listener
+playButton.addEventListener('click', function () {
+    if (backgroundMusic.paused) {
+        // Play Music
+        backgroundMusic.play();
+        // Change Button Text to 'Pause'
+        playButton.innerHTML = 'Pause';
     } else {
-        // Mute Music
-        backgroundMusic.muted = true;
-        // Change Button Text to 'Unmute'
-        muteButton.textContent = 'Unmute';
+        // Pause Music
+        backgroundMusic.pause();
+        // Change Button Text to 'Play'
+        playButton.innerHTML = 'Play';
     }
 });
-

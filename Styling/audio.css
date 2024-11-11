@@ -34,7 +34,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* Styling for the Mute Button */
-#mute-button {
+#play-button {
   background-color: #d98fcc;
   color: white;
   border: none;
@@ -45,6 +45,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* Hover Effect for the Mute Button */
-#mute-button:hover {
+#play-button:hover {
   background-color: #A64182;
+}
+
+input[type="range"]:focus, #play-button:focus {
+  outline: 2px dashed #A64182;
+  outline-offset: 3px;
 }

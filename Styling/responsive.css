@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    #cat-container {
+        padding: 10px;
+    }
+
+    #refresh-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .animated-cat {
+        width: 150px;
+        height: 150px;
+    }
+}

@@ -14,9 +14,12 @@
     <link href="Styling/footer.css" rel="stylesheet">
     <link href="Styling/header.css" rel="stylesheet">
     <link href="Styling/refresh-btn.css" rel="stylesheet">
+    <link href="Styling/responsive.css" rel="stylesheet">
+    <link href="Styling/cat-fact.css" rel="stylesheet">
 
     <!-- Link to Java Script -->
     <script src="JavaScript/music.js" defer></script>
+    <script src="JavaScript/status-codes.js" defer></script>
     <script src="JavaScript/script.js" defer></script>
 </head>
 
@@ -43,7 +46,9 @@
         <button id="refresh-button">♡︎ Show Another Cat ♡︎</button>
     </main>
 
-    <p id="cat-fact">Did you know? Cat facts will appear here!</p>
+    <div>
+        <p id="cat-fact">Did you know? Cat facts will appear here!</p>
+    </div>
 
     <!-- Animated Cat Image for Extra Effect -->
     <img class="animated-cat" src="Assets/Images/Animated Cat.png" alt="Animated Cat" />
@@ -51,7 +56,7 @@
     <!-- Music Control Div -->
     <div class="music">
         <!-- Audio Element to Play Background Music which Loops on End -->
-        <audio id="background-music" autoplay loop>
+        <audio id="background-music" loop>
             <source src="Assets/Audio/audio.mp3" type="audio/mpeg">
         </audio>
 
@@ -59,8 +64,9 @@
         <span id="volume-text">Volume:</span>
         <!-- Range Input for Controlling the Volume -->
         <input type="range" id="volume-control" min="0" max="100">
-        <!-- Button to Mute/Unmute -->
-        <button id="mute-button">Mute</button>
+        <!-- Play/Pause Button -->
+        <button id="play-button">Play</button>
+
     </div>
 
     <!-- Footer Section for Link to API Website -->

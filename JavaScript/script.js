@@ -1,30 +1,10 @@
+// For the Codes and Descriptions
+const descriptions = codesAndDescriptions.descriptions;
+const statusCodes = codesAndDescriptions.codes;
+
 // Defines the Base URL for Fetching HTTP Cat Images
 const apiUrl = "https://http.cat/";
 const meowFactsApi = "https://meowfacts.herokuapp.com/";
-
-// Object to Hold Descriptions Fetched from the JSON File
-let descriptions = {};
-
-
-// Fetch the Descriptions from the Status-codes.json File
-fetch("status-codes.json")
-  .then(response => response.json())
-  .then(data => {
-    // Stores the Description in the 'descriptions' Object
-    descriptions = data.descriptions;
-    // Generates a Random Cat Image when the Page loads
-    generateCatImage();
-  })
-  .catch(error => console.error("Error loading JSON:", error));
-
-// List of Supported HTTP Status Codes for Random Selection
-const statusCodes = [
-  200, 404, 500, 403, 418, 100, 101, 102, 201, 202, 203, 204, 206, 207,
-  300, 301, 302, 303, 304, 305, 307, 308, 400, 401, 402, 405, 406, 407,
-  408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 420, 421, 422, 423,
-  424, 425, 426, 429, 431, 444, 450, 451, 497, 498, 499, 501, 502, 503,
-  504, 506, 507, 508, 509, 510, 511, 521, 522, 523, 525, 599
-];
 
 // Elements for Cat Image, Description, and Refresh Button
 const catImage = document.getElementById("cat-image");
@@ -34,79 +14,86 @@ const refreshButton = document.getElementById("refresh-button");
 const catFact = document.getElementById("cat-fact");
 
 /**
- * // Function to Generate a Random Cat Image, Description, and Cat Fact
+ * Function to Generate a Random Cat Image, Description, and Cat Fact
  */
 function generateCatImage() {
+
   // Select a Random Status Code from the statusCodes Array
   const randomStatus = statusCodes[Math.floor(Math.random() * statusCodes.length)];
+
   // Get the Description for the Status Code or Default Message if not Found
   const statusDescription = descriptions[randomStatus] || "No description available.";
 
-  // Set Background Color Based on Status Code Category
-  let backgroundColor;
-  if (randomStatus >= 100 && randomStatus < 200) {
-    // Light Blue for Informational: 100s
-    backgroundColor = "#D6EAF8";
-  } else if (randomStatus >= 200 && randomStatus < 300) {
-    // Light Green for Success: 200s
-    backgroundColor = "#D4EFDF";
-  } else if (randomStatus >= 300 && randomStatus < 400) {
-    // Light Yellow for Redirection: 300s
-    backgroundColor = "#FCF3CF";
-  } else if (randomStatus >= 400 && randomStatus < 500) {
-    // Light Red for Client Error: 400s
-    backgroundColor = "#F5B7B1";
-  } else if (randomStatus >= 500 && randomStatus < 600) {
-    // Light purple for Server Error: 500s
-    backgroundColor = "#D2B4DE";
-  } else {
-    // Default Light Pink for Unexpected Cases
-    backgroundColor = "#FFE4E1";
-  }
-
-  // Change the Background Colour of the Page Based on the Status Code Category
-  document.body.style.backgroundColor = backgroundColor;
-
-  // Set the Source URL for the Cat Image using the Status Code
-  catImage.src = `${apiUrl}${randomStatus}`;
-  // Set the Alt Text fpr Accessibility Purposes
-  catImage.alt = `HTTP Status ${randomStatus}`;
-  // Display the Status Description in the Paragraph Element
-  catDescription.textContent = statusDescription;
-
-  // Removes Any Existing Animation Classes from the Animated Cat
-  animatedCat.classList.remove(
-    'bounce-100', 'slide-200', 'shake-300', 'spin-400', 'rotate-500'
-  );
-
-  // Add Animation Based on Status Code Category
-  if (randomStatus >= 100 && randomStatus < 200) {
-    // Informational: 100s
-    animatedCat.classList.add('bounce-100');
-  } else if (randomStatus >= 200 && randomStatus < 300) {
-    // Success: 200s
-    animatedCat.classList.add('slide-200');
-  } else if (randomStatus >= 300 && randomStatus < 400) {
-    // Redirection: 300s
-    animatedCat.classList.add('shake-300');
-  } else if (randomStatus >= 400 && randomStatus < 500) {
-    // Client Error: 400s
-    animatedCat.classList.add('spin-400');
-  } else if (randomStatus >= 500 && randomStatus < 600) {
-    // Server Error: 500s
-    animatedCat.classList.add('rotate-500');
-  }
-
-    // Fetch and Display a Random Cat Fact
-    fetch(meowFactsApi)
-    .then(response => response.json())
+  // Fetch and Display Cat Fact
+  // Sends a Request to the Meow Facts API
+  fetch(meowFactsApi)
+    // Converts the Response into JSON Format
+    .then(res => res.json())
     .then(data => {
-      catFact.textContent = `Did you know? ${data.data[0]}`;
+
+      // Display the First Fact from the 'data' Array in the HTML Element with ID 'cat-fact'
+      const catFactText = data.data[0];
+      // Used so I can See Common Words coming up in the Facts to add to the 'else if'
+      console.log(catFactText);
+      catFact.innerHTML = catFactText;
+
+      // Decide the background color and animation based on the cat fact
+      let backgroundColor;
+      let animationClass;
+
+      if (catFactText.includes("clowder") || catFactText.includes("kitten")) {
+        backgroundColor = "#ffffba"; // Pastel Background for "clowder"
+        animationClass = 'shake';
+      } else if (catFactText.includes("toes") || catFactText.includes("paws")) {
+        backgroundColor = "#baffc9"; // Pastel Green Background for "toes"
+        animationClass = 'bounce';
+      } else if (catFactText.includes("purring")|| catFactText.includes("pet")) {
+        backgroundColor = "#bae1ff"; // Pastel Blue Background for "purring"
+        animationClass = 'spin';
+      } else if (catFactText.includes("nap") || catFactText.includes("human")) {
+        backgroundColor = "#F5F5DC"; // Beige Background for "nap"
+        animationClass = 'rotate';
+      } else if (catFactText.includes("tail")|| catFactText.includes("dog")) {
+        backgroundColor = "#ffdfba"; // Pastel Orange Background for "tail"
+        animationClass = 'slide';
+      } else if (catFactText.includes("whiskers")|| catFactText.includes("heat")) {
+        backgroundColor = "#FFB6C1"; // Light Pink Background for "whiskers"
+        animationClass = 'bounce';
+      } else if (catFactText.includes("meow")|| catFactText.includes("claws")) {
+        backgroundColor = "#FAA0A0"; // Pastel Red Background for "meow"
+        animationClass = 'shake';
+      } else if (catFactText.includes("sleep")|| catFactText.includes("domesticated")) {
+        backgroundColor = "#C0C0C0"; // Silver background for "sleep"
+        animationClass = 'spin';
+      } else if (catFactText.includes("hunt")|| catFactText.includes("sleep")) {
+        backgroundColor = "#9c8470"; // Light Brown Background for "hunt"
+        animationClass = 'rotate';
+      } else if (catFactText.includes("cute")|| catFactText.includes("animal")) {
+        backgroundColor = "#C3B1E1"; // Pastel Purple background for "cute"
+        animationClass = 'bounce';
+      } else {
+        backgroundColor = "#FFE4E1"; // Default pink background
+        animationClass = 'spin';
+      }
+
+
+      // Change the Background Colour of the Page Based on the Fact
+      document.body.style.backgroundColor = backgroundColor;
+
+      // Removes Any Existing Animation Classes from the Animated Cat
+      animatedCat.classList.remove('bounce', 'slide', 'shake', 'spin', 'rotate');
+
+      // Add the Selected Animation Based on the Facts Content
+      animatedCat.classList.add(animationClass);
+
+      // Set the Source URL for the Cat Image using the Status Code and Set an Alt Text
+      catImage.src = `${apiUrl}${randomStatus}`;
+      catImage.alt = `HTTP Status ${randomStatus} Cat`;
+
+      // Display the Status Description in the Paragraph Element
+      catDescription.innerHTML = `${randomStatus}: ${statusDescription}`;
     })
-    .catch(error => {
-      console.error("Error fetching cat fact:", error);
-      catFact.textContent = "Could not load a fun cat fact at this time.";
-    });
+    .catch(error => console.error('Error fetching cat fact:', error)); // Added error handling for fetch
 }
 
 // Refresh button listener
@@ -116,4 +103,10 @@ refreshButton.addEventListener("click", generateCatImage);
 generateCatImage();
 
 // Set interval to change cat image and description every 5 seconds
-setInterval(generateCatImage, 5000);
+let catInterval = setInterval(generateCatImage, 5000);
+
+// Clears the Interval on User Interaction
+refreshButton.addEventListener("click", () => {
+  clearInterval(catInterval);
+  catInterval = setInterval(generateCatImage, 5000);
+});

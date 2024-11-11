@@ -1,6 +1,6 @@
 /* Animation Keyframes and Classes */
-/* Bouncing for 100s */
-@keyframes bounce-100 {
+/* Bouncing*/
+@keyframes bounce {
     0% {
         transform: translateY(0);
     }
@@ -14,8 +14,8 @@
     }
 }
 
-/* Sliding for 200s */
-@keyframes slide-200 {
+/* Sliding */
+@keyframes slide {
     0% {
         transform: translateX(-100%);
     }
@@ -25,8 +25,8 @@
     }
 }
 
-/* Shaking for 300s */
-@keyframes shake-300 {
+/* Shaking */
+@keyframes shake {
     0% {
         transform: translateX(0);
     }
@@ -48,8 +48,8 @@
     }
 }
 
-/* Spinning for 400s */
-@keyframes spin-400 {
+/* Spinning*/
+@keyframes spin {
     0% {
         transform: rotate(0deg);
     }
@@ -63,8 +63,8 @@
     }
 }
 
-/* Rotating for 500s */
-@keyframes rotate-500 {
+/* Rotating */
+@keyframes rotate {
     0% {
         transform: translateY(0);
     }
@@ -95,29 +95,31 @@
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    /* Keep the final state of the animation */
+    animation-fill-mode: forwards;
 }
 
 /* Animation Class for Bouncing Effect */
-.bounce-100 {
-    animation-name: bounce-100;
+.bounce {
+    animation-name: bounce;
 }
 
 /* Animation Class for Slide Effect */
-.slide-200 {
-    animation-name: slide-200;
+.slide {
+    animation-name: slide;
 }
 
 /* Animation Class for Shake Effect */
-.shake-300 {
-    animation-name: shake-300;
+.shake {
+    animation-name: shake;
 }
 
 /* Animation Class for Spin Effect */
-.spin-400 {
-    animation-name: spin-400;
+.spin {
+    animation-name: spin;
 }
 
 /* Animation Class for Rotating Effect */
-.rotate-500 {
-    animation-name: rotate-500;
+.rotate {
+    animation-name: rotate;
 }
