@@ -49,7 +49,7 @@ function generateCatImage() {
         animationClass = 'bounce';
       } else if (catFactText.includes("purring")|| catFactText.includes("pet")) {
         backgroundColor = "#bae1ff"; // Pastel Blue Background for "purring"
-        animationClass = 'spin';
+        animationClass = 'rotate';
       } else if (catFactText.includes("nap") || catFactText.includes("human")) {
         backgroundColor = "#F5F5DC"; // Beige Background for "nap"
         animationClass = 'rotate';
@@ -64,7 +64,7 @@ function generateCatImage() {
         animationClass = 'shake';
       } else if (catFactText.includes("sleep")|| catFactText.includes("domesticated")) {
         backgroundColor = "#C0C0C0"; // Silver background for "sleep"
-        animationClass = 'spin';
+        animationClass = 'bounce';
       } else if (catFactText.includes("hunt")|| catFactText.includes("sleep")) {
         backgroundColor = "#9c8470"; // Light Brown Background for "hunt"
         animationClass = 'rotate';
