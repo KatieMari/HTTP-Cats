@@ -1,5 +1,6 @@
 // Defines the Base URL for Fetching HTTP Cat Images
 const apiUrl = "https://http.cat/";
+const meowFactsApi = "https://meowfacts.herokuapp.com/";
 
 // Object to Hold Descriptions Fetched from the JSON File
 let descriptions = {};
@@ -30,8 +31,11 @@ const catImage = document.getElementById("cat-image");
 const animatedCat = document.querySelector(".animated-cat");
 const catDescription = document.getElementById("cat-description");
 const refreshButton = document.getElementById("refresh-button");
+const catFact = document.getElementById("cat-fact");
 
-// Function to Generate a Random Cat Image and Description
+/**
+ * // Function to Generate a Random Cat Image, Description, and Cat Fact
+ */
 function generateCatImage() {
   // Select a Random Status Code from the statusCodes Array
   const randomStatus = statusCodes[Math.floor(Math.random() * statusCodes.length)];
@@ -92,6 +96,17 @@ function generateCatImage() {
     // Server Error: 500s
     animatedCat.classList.add('rotate-500');
   }
+
+    // Fetch and Display a Random Cat Fact
+    fetch(meowFactsApi)
+    .then(response => response.json())
+    .then(data => {
+      catFact.textContent = `Did you know? ${data.data[0]}`;
+    })
+    .catch(error => {
+      console.error("Error fetching cat fact:", error);
+      catFact.textContent = "Could not load a fun cat fact at this time.";
+    });
 }
 
 // Refresh button listener
