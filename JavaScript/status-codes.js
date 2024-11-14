@@ -77,4 +77,3 @@ const codesAndDescriptions = {
       "599": "Network Connect Timeout Error - The server did not respond in time."
     }
   }
-  

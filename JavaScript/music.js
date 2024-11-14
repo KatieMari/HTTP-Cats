@@ -26,6 +26,3 @@ playButton.addEventListener('click', function () {
         playButton.innerHTML = 'Play';
     }
 });
-
-
-
