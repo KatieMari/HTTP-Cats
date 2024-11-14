@@ -47,28 +47,28 @@ function generateCatImage() {
       } else if (catFactText.includes("toes") || catFactText.includes("paws")) {
         backgroundColor = "#baffc9"; // Pastel Green Background for "toes"
         animationClass = 'bounce';
-      } else if (catFactText.includes("purring")|| catFactText.includes("pet")) {
+      } else if (catFactText.includes("purring") || catFactText.includes("pet")) {
         backgroundColor = "#bae1ff"; // Pastel Blue Background for "purring"
         animationClass = 'rotate';
       } else if (catFactText.includes("nap") || catFactText.includes("human")) {
         backgroundColor = "#F5F5DC"; // Beige Background for "nap"
         animationClass = 'rotate';
-      } else if (catFactText.includes("tail")|| catFactText.includes("dog")) {
+      } else if (catFactText.includes("tail") || catFactText.includes("dog")) {
         backgroundColor = "#ffdfba"; // Pastel Orange Background for "tail"
         animationClass = 'slide';
-      } else if (catFactText.includes("whiskers")|| catFactText.includes("heat")) {
+      } else if (catFactText.includes("whiskers") || catFactText.includes("heat")) {
         backgroundColor = "#FFB6C1"; // Light Pink Background for "whiskers"
         animationClass = 'bounce';
-      } else if (catFactText.includes("meow")|| catFactText.includes("claws")) {
+      } else if (catFactText.includes("meow") || catFactText.includes("claws")) {
         backgroundColor = "#FAA0A0"; // Pastel Red Background for "meow"
         animationClass = 'slide';
-      } else if (catFactText.includes("sleep")|| catFactText.includes("domesticated")) {
+      } else if (catFactText.includes("sleep") || catFactText.includes("domesticated")) {
         backgroundColor = "#C0C0C0"; // Silver background for "sleep"
         animationClass = 'bounce';
-      } else if (catFactText.includes("hunt")|| catFactText.includes("sleep")) {
+      } else if (catFactText.includes("hunt") || catFactText.includes("sleep")) {
         backgroundColor = "#9c8470"; // Light Brown Background for "hunt"
         animationClass = 'rotate';
-      } else if (catFactText.includes("cute")|| catFactText.includes("animal")) {
+      } else if (catFactText.includes("cute") || catFactText.includes("animal")) {
         backgroundColor = "#C3B1E1"; // Pastel Purple background for "cute"
         animationClass = 'slide';
       } else {
@@ -93,7 +93,8 @@ function generateCatImage() {
       // Display the Status Description in the Paragraph Element
       catDescription.innerHTML = `${randomStatus}: ${statusDescription}`;
     })
-    .catch(error => console.error('Error fetching cat fact:', error)); // Added error handling for fetch
+    // Added error handling for fetch
+    .catch(error => console.error('Error fetching cat fact:', error));
 }
 
 // Refresh button listener

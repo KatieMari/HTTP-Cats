@@ -5,12 +5,6 @@ const playButton = document.getElementById('play-button');
 
 // Sets Initial Volume and Plays when loaded
 backgroundMusic.volume = 0.5;
-window.addEventListener('load', () => {
-    // Plays Music on Load
-    backgroundMusic.play();
-     // Set Play Button Text to 'Pause' since the music plays automatically
-     playButton.innerHTML = 'Pause';
-});
 
 // Updates Volume Based on Slider Value
 volumeControl.addEventListener('input', function () {
@@ -32,3 +26,6 @@ playButton.addEventListener('click', function () {
         playButton.innerHTML = 'Play';
     }
 });
+
+
+
